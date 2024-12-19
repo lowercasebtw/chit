@@ -28,7 +28,7 @@ class EnchantmentLevelNumeric(val enchantmentId: ResourceLocation) : RangeSelect
         return EnchantmentUtil.getEnchantmentLevel(clientLevel, stack, enchantmentId).toFloat()
     }
 
-    override fun type(): MapCodec<out RangeSelectItemModelProperty?>? {
+    override fun type(): MapCodec<out RangeSelectItemModelProperty?> {
         return CODEC
     }
 }

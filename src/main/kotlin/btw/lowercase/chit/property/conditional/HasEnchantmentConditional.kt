@@ -35,7 +35,7 @@ class HasEnchantmentConditional(val enchantmentId: ResourceLocation, val enchant
         return level != 0 && !(enchantmentLevel != 0 && enchantmentLevel != level)
     }
 
-    override fun type(): MapCodec<out ConditionalItemModelProperty?>? {
+    override fun type(): MapCodec<out ConditionalItemModelProperty?> {
         return CODEC
     }
 }
