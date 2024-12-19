@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "chit",
+	"version": "${version}",
+	"name": "chit",
+	"description": "A vanilla-like implementation of Optifine's CIT, shaped how I believe it would be/like.",
+	"authors": [
+		"lowercasebtw"
+	],
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			{
+				"value": "btw.lowercase.chit.ChitClientMod",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": ">=1.21.4",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
