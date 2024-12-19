@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "chit",
 	"version": "${version}",
-	"name": "chit",
+	"name": "Chit",
 	"description": "A vanilla-like implementation of Optifine's CIT, shaped how I believe it would be/like.",
 	"authors": [
 		"lowercasebtw"
