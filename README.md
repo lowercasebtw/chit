@@ -1,21 +1,26 @@
 # Chit
+
 A vanilla-like implementation of Optifine's CIT, shaped how I believe it would be/like.
 
 ## Types
+
 #### Conditional:
-- has_enchantment
+
+- has_enchantment (if stack has the enchantment)
     - fields:
-        - enchantment id (required)
-        - level (not required, will work on any level)
-      
+        - enchantment: Enchantment Identifier [REQUIRED]
+        - level [OPTIONAL]
+
 #### Range Dispatch:
-- enchantment_level
-    - value based on enchantment level
+
+- enchantment_level (value based on enchantment level)
     - fields:
-        - enchantment id (required)
+        - enchantment: Enchantment Identifier [REQUIRED]
 
 ## Examples
+
 diamond_sword.json
+
 ```json
 {
 	"model": {
@@ -33,7 +38,9 @@ diamond_sword.json
 	}
 }
 ```
+
 enchanted_book.json
+
 ```json
 {
 	"model": {
