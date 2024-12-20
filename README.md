@@ -17,6 +17,10 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
     - fields:
         - enchantment: Enchantment Identifier [REQUIRED]
 
+#### Select:
+
+- rarity (value of the stack rarity component)
+
 ## Examples
 
 diamond_sword.json
@@ -59,6 +63,30 @@ enchanted_book.json
 		"fallback": {
 			"type": "minecraft:model",
 			"model": "minecraft:item/enchanted_book"
+		}
+	}
+}
+```
+
+golden_apple.json
+
+```json
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "chit:rarity",
+		"cases": [
+			{
+				"when": "rare",
+				"model": {
+					"type": "minecraft:model",
+					"model": "minecraft:item/apple"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/golden_apple"
 		}
 	}
 }
