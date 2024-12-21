@@ -8,14 +8,17 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
 
 - has_enchantment (if stack has the enchantment)
     - fields:
-        - enchantment: Enchantment Identifier [REQUIRED]
+        - enchantment: Enchantment identifier [REQUIRED]
         - level [OPTIONAL]
+- has_enchantments (if stack has all the listed enchantments)
+    - fields:
+        - enchantments: List of enchantment identifier [REQUIRED]
 
 #### Range Dispatch:
 
 - enchantment_level (value based on enchantment level)
     - fields:
-        - enchantment: Enchantment Identifier [REQUIRED]
+        - enchantment: Enchantment identifier [REQUIRED]
 
 #### Select:
 
@@ -87,6 +90,29 @@ golden_apple.json
 		"fallback": {
 			"type": "minecraft:model",
 			"model": "minecraft:item/golden_apple"
+		}
+	}
+}
+```
+
+bone.json
+
+```json
+{
+	"model": {
+		"type": "minecraft:condition",
+		"property": "chit:has_enchantments",
+		"enchantments": [
+			"minecraft:unbreaking",
+			"minecraft:sharpness"
+		],
+		"on_true": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/stick"
+		},
+		"on_false": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/bone"
 		}
 	}
 }
