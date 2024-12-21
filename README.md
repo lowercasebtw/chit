@@ -6,11 +6,11 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
 
 #### Conditional:
 
-- has_enchantment (if stack has the enchantment)
+- has_enchantment (if stack has the enchantment/stored enchantment)
     - fields:
         - enchantment: Enchantment identifier [REQUIRED]
         - level [OPTIONAL]
-- has_enchantments (if stack has all the listed enchantments)
+- has_enchantments (if stack has all the listed enchantments/stored enchantments)
     - fields:
         - enchantments: List of enchantment identifier [REQUIRED]
 
