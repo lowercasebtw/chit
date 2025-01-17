@@ -16,6 +16,9 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
 - predicate
     - fields
         - predicate: A item sub predicate [REQUIRED]
+- custom_name
+    - fields
+        - regex: The regex in string form, to test on the item's custom name
 
 #### Range Dispatch:
 
@@ -26,6 +29,7 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
 #### Select:
 
 - rarity (value of the stack rarity component)
+- "minecraft:component" (Backported from 25w03a, self-explanatory)
 
 ## Examples
 
@@ -142,6 +146,51 @@ iron_sword.json
 		"on_false": {
 			"type": "minecraft:model",
 			"model": "minecraft:item/iron_sword"
+		}
+	}
+}
+```
+
+bone.json
+
+```json
+{
+	"model": {
+		"type": "minecraft:condition",
+		"property": "chit:custom_name",
+		"regex": "lol",
+		"on_true": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/snowball"
+		},
+		"on_false": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/bone"
+		}
+	}
+}
+```
+
+stick.json
+
+```json
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:component",
+		"component": "minecraft:custom_name",
+		"cases": [
+			{
+				"when": "{\"color\":\"yellow\",\"italic\":false,\"bold\":true,\"text\":\"Hello world\"}",
+				"model": {
+					"type": "minecraft:model",
+					"model": "minecraft:item/blaze_rod"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/stick"
 		}
 	}
 }
