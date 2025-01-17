@@ -2,6 +2,7 @@ package btw.lowercase.chit
 
 import btw.lowercase.chit.property.conditional.HasEnchantmentConditional
 import btw.lowercase.chit.property.conditional.HasEnchantmentsConditional
+import btw.lowercase.chit.property.conditional.PredicateConditional
 import btw.lowercase.chit.property.numeric.EnchantmentLevelNumeric
 import btw.lowercase.chit.property.select.RaritySelect
 import net.fabricmc.api.ClientModInitializer
@@ -20,9 +21,8 @@ object ChitClientMod : ClientModInitializer {
         // Components
         SelectItemModelProperties.ID_MAPPER.put(id("rarity"), RaritySelect.CODEC)
 
-        // Custom Data
-
         // Other
+        ConditionalItemModelProperties.ID_MAPPER.put(id("predicate"), PredicateConditional.CODEC)
     }
 
     fun id(path: String): ResourceLocation {

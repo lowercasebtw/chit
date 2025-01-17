@@ -13,6 +13,9 @@ A vanilla-like implementation of Optifine's CIT, shaped how I believe it would b
 - has_enchantments (if stack has all the listed enchantments/stored enchantments)
     - fields:
         - enchantments: List of enchantment identifier [REQUIRED]
+- predicate
+    - fields
+        - predicate: A item sub predicate [REQUIRED]
 
 #### Range Dispatch:
 
@@ -113,6 +116,32 @@ bone.json
 		"on_false": {
 			"type": "minecraft:model",
 			"model": "minecraft:item/bone"
+		}
+	}
+}
+```
+
+iron_sword.json
+
+```json
+{
+	"model": {
+		"type": "minecraft:condition",
+		"property": "chit:predicate",
+		"predicate": {
+			"minecraft:damage": {
+				"damage": {
+					"min": 125
+				}
+			}
+		},
+		"on_true": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/stone_sword"
+		},
+		"on_false": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/iron_sword"
 		}
 	}
 }
